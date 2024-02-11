@@ -12,6 +12,7 @@ type ProductDataProps = {
   title: string;
   description: string;
   thumbnail: ImageProps;
+  quantity?: number;
 };
 
 type ProductProps = TouchableOpacityProps & {
@@ -33,6 +34,12 @@ export const Product = forwardRef<TouchableOpacity, ProductProps>(
             <Text className="text-slate-100 font-subtitle text-base flex-1">
               {data.title}
             </Text>
+
+            {data.quantity && (
+              <Text className="text-slate-400 font-subtitle, text-sm">
+                x {data.quantity}
+              </Text>
+            )}
           </View>
 
           <Text className="text-slate-400 text-xs leading-5 mt-0.5">
