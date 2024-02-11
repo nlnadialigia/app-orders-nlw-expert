@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "nlw-expert-rn",
-    "slug": "nlw-expert-rn",
+    "name": "app-orders",
+    "slug": "app-orders",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
