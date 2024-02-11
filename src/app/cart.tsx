@@ -6,11 +6,15 @@ import { Product } from "@/components/product";
 import { ProductCartProps, useCartStore } from "@/stores/cart-store";
 import { formatCurrency } from "@/utils/functions/format-currency";
 import { Feather } from "@expo/vector-icons";
+import { useNavigation } from "expo-router";
 import { useState } from "react";
-import { Alert, ScrollView, Text, View } from "react-native";
+import { Alert, Linking, ScrollView, Text, View } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
+const PHONE_NUMBER = `+55${process.env.EXPO_PUBLIC_PHONE}`;
+
 export default function Cart() {
+  const navigation = useNavigation();
   const cartStore = useCartStore();
   const [address, setAddress] = useState("");
   const total = formatCurrency(
@@ -27,7 +31,30 @@ export default function Cart() {
     ]);
   }
 
-  function handleOrder() {}
+  function handleOrder() {
+    if (address.trim().length === 0) {
+      return Alert.alert("Pedido", "Informe os dados da entrega");
+    }
+
+    const products = cartStore.products
+      .map((product) => `\n ${product.quantity} ${product.title}`)
+      .join("");
+
+    const message = `
+      🍔 NOVO PEDIDO
+      \n Entregar em: ${address}
+      ${products}
+      \n Valor total: ${total}
+    `;
+
+    Linking.openURL(
+      `http://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${message}`,
+    );
+
+    cartStore.clean();
+
+    navigation.goBack();
+  }
 
   return (
     <View className="flex-1 pt-8">
