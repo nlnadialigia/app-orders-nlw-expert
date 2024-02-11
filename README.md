@@ -28,6 +28,8 @@ App de pedidos para envio pelo whatsapp, desenvolvido na NLW Expert - Trilha Rea
 
 ## 📎 Passo a passo
 
+- Aula 01 - criação do header e o componente de carrinho e do botão das categorias.
+
 <br>
 
 ## 🚀 Como executar o projeto
@@ -64,6 +66,7 @@ $ npm run start
 - [React Native](https://reactnative.dev/)
 - [Expo](https://docs.expo.dev/)
 - [Typescript](https://typescriptlang.org)
+- [TailwindCss](https://tailwindcss.com/)
 
 <br>
 
