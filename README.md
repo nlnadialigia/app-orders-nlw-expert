@@ -22,13 +22,15 @@
 
 App de pedidos para envio pelo whatsapp, desenvolvido na NLW Expert - Trilha React Native, da [Rocketseat](https://www.rocketseat.com.br/).
 
-![Em construção](https://ik.imagekit.io/l7cwocexhc/crud-flask/em-contrucao.png?updatedAt=1706705289779)
+<!-- ![Em construção](https://ik.imagekit.io/l7cwocexhc/crud-flask/em-contrucao.png?updatedAt=1706705289779) -->
 
 <br>
 
 ## 📎 Passo a passo
 
-- Aula 01 - criação do header e o componente de carrinho e do botão das categorias.
+- Aula 01 - Criação do header e o componente de carrinho e do botão das categorias.
+- Alua 02 - Criação da interface e navegação na página de detalhe do produto
+- Aula 03 - Persistência dos dados, limpar e remover produtos do carrinho e envio do pedido pelo Whatsapp
 
 <br>
 
